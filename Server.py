@@ -10,12 +10,14 @@ print ('socket binded to ',port)
 
 s.listen(5)
 print ('socket is listening')
-
+client, address = s.accept()
+print ('got connection from', address)
 while True:
-    client, address = s.accept()
-    print ('got connection from', address)
-    MSG, bbb = client.recvfrom(1024)
-    print (MSG.decode())
-    m = 'thank you for connecting'
-    client.send(m.encode())
-    client.close()
+        
+        
+        MSG, bbb = client.recvfrom(1024)
+        print (MSG.decode())
+        m = input('Enter your message:')
+        client.send(m.encode())
+        if MSG.decode() == 'quit()':
+           break
