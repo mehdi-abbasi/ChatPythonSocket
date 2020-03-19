@@ -1,2 +1,2 @@
 # ChatPythonSocket
-a simple chat code with python socket programming
+a simple code to chat with python socket programming
